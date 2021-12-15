@@ -56,7 +56,7 @@ export class AuthenticationService implements OnInit {
     localStorage.setItem('token', data.token)
   }
 
-  getExpiration(token: string): Date{
+  public getExpiration(token: string): Date{
     const decoded: any = jwt_decode(token);
 
     if(decoded.exp === undefined){
@@ -68,7 +68,7 @@ export class AuthenticationService implements OnInit {
     return date;
   }
 
-  isTokenExpired(token: string): boolean{
+  public isTokenExpired(token: string): boolean{
     if(!token){
       return true;
     }
@@ -81,7 +81,7 @@ export class AuthenticationService implements OnInit {
     return !(date.valueOf() > new Date().valueOf());
   }
 
-  isUserLogged():boolean {
+  public isUserLogged():boolean {
     const token = localStorage.getItem('token');
     if(!token){
       return false;
@@ -92,7 +92,7 @@ export class AuthenticationService implements OnInit {
     return true;
   }
 
-  logout() {
+  public logout() {
     localStorage.removeItem("token");
   }
 
