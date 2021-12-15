@@ -1,0 +1,36 @@
+<div class="login">
+  <div class="card">
+    <div class="card-body">
+      <form class="sigin-form" #dataForm="ngForm">
+        <div class="row">
+          <span class="msg">Cadastro</span>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input [(ngModel)]="dataFromForm.user" name="user" id="usuario" type="text" class="validate" ngModel required ngModel>
+            <label for="usuario">Usuario</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input [(ngModel)]="dataFromForm.pass" name="password" id="password" type="password" class="validate" ngModel required>
+            <label for="password">Senha</label>
+          </div>
+        </div>
+        <div class="row">
+          <p class="remember">
+            <label>
+              <input type="checkbox" class="filled-in"/>
+            </label>
+          </p>
+        </div>
+        <div class="row">
+          <button class="btn waves-effect waves-light logar" type="submit" name="action" (click)="register()"
+          >Cadastrar
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
