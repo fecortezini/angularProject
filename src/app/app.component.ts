@@ -12,6 +12,6 @@ export class AppComponent {
   constructor(public auth: AuthenticationService){}
 
   onLogout(){
-    this.auth.logOut();
+    this.auth.logout();
   }
 }

@@ -13,6 +13,10 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  getUsers(): Observable<Accounts[]>{
+    return this.http.get<Accounts[]>(`${environment.api}/users`)
+  }
+
   authUser(dataLogin: Accounts): Observable<HttpResponse<any>>{
     return this.http.post<Accounts>(`${environment.api}/users/auth`,
      dataLogin, {observe: 'response'})

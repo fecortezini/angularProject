@@ -11,9 +11,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
   { path: 'home',
-  component: HomeComponent, canActivate:[AuthsGuard] },
-  { path: 'catalogo', loadChildren: () => import('./animes/animes.module')
-  .then((m) => m.AnimesModule), canActivate:[AuthsGuard]},
+  component: HomeComponent, canActivate: [AuthsGuard] },
+  { path: 'catalogo', component: AnimesComponent, canActivate: [AuthsGuard]},
   { path: '', component: LoginComponent }
 
 ];
