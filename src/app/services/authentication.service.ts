@@ -5,8 +5,7 @@ import { Accounts } from './../models/account';
 import { Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from './api.service';
-//import * as moment from "moment";
-import { tap } from 'rxjs/operators';
+//import { tap } from 'rxjs/operators';
 import jwt_decode from 'jwt-decode';
 
 
@@ -25,7 +24,7 @@ export class AuthenticationService implements OnInit {
   ngOnInit(){
   }
 
-  registrar(data: Accounts){
+  public registrar(data: Accounts){
     this.getAcc.registerUser(data)
     .subscribe(
       () => {
@@ -38,7 +37,7 @@ export class AuthenticationService implements OnInit {
     );
   }
 
-  login(data: Accounts) {
+  public login(data: Accounts) {
     return this.http.post<Accounts>(`${environment.api}/users/auth`, data, {observe: 'response'})
     .subscribe(
       (data: any) => {
