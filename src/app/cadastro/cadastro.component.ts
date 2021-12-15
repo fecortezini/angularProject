@@ -20,7 +20,7 @@ export class CadastroComponent implements OnInit {
   }
 
   register(){
-    console.log(this.dataFromForm);
+    //console.log(this.dataFromForm);
     this.auth.registrar(this.dataFromForm);
   }
 
