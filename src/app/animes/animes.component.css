@@ -2,7 +2,21 @@
   margin-top: 10px;
 }
 .titulo {
-  /* text-align: center; */
+  text-align: center;
   margin-left: 10px;
   color: #26a69a;
+}
+.card-content{
+  color:#6a1b9a;
+  text-align: center;
+  font-weight: bold;
+}
+.card{
+  float: left;
+  display: inline;
+  margin: 15px;
+}
+.dado {
+  color: red;
+  font-style: italic;
 }

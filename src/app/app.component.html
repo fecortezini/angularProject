@@ -8,14 +8,14 @@
             <a class="mn" routerLink="/home" >Home</a>
           </li>
           <li routerLinkActive="active" *ngIf="auth.isUserLogged()">
-            <a class="mn" routerLink="/catalogo">Catálogo</a>
+            <a class="mn" routerLink="/usuarios">Usuarios</a>
           </li>
-          <li routerLinkActive="active" *ngIf="auth.isUserLogged()">
+          <!-- <li routerLinkActive="active" *ngIf="auth.isUserLogged()">
           <a class="mn">Area restrita</a>
-          </li>
-          <li routerLinkActive="active" *ngIf="auth.isUserLogged()">
+          </li> -->
+          <!-- <li routerLinkActive="active" *ngIf="auth.isUserLogged()">
             <a class="mn">Contato</a>
-          </li>
+          </li> -->
           <li routerLinkActive="active">
             <a class="mn" routerLink="/login" *ngIf="!auth.isUserLogged()">Login</a>
           </li>

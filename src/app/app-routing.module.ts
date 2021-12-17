@@ -1,3 +1,4 @@
+import { EditarComponent } from './editar/editar.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { AnimesComponent } from './animes/animes.component';
 //import { WellcomeComponent } from './wellcome/wellcome.component';
@@ -8,11 +9,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthsGuard } from './guards/guards.guard';
 
 const routes: Routes = [
+
   { path: 'login', component: LoginComponent },
+
   { path: 'cadastro', component: CadastroComponent },
-  { path: 'home',
-  component: HomeComponent, canActivate: [AuthsGuard] },
-  { path: 'catalogo', component: AnimesComponent, canActivate: [AuthsGuard]},
+
+  { path: 'home', component: HomeComponent,
+  canActivate: [AuthsGuard] },
+
+  { path: 'usuarios', component: AnimesComponent,
+  canActivate: [AuthsGuard]},
+
+  { path: 'editar', component: EditarComponent,
+  canActivate: [AuthsGuard]},
+
   { path: '', component: LoginComponent }
 
 ];

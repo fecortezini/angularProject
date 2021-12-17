@@ -17,10 +17,15 @@ export class ApiService {
     return this.http.get<Accounts[]>(`${environment.api}/users`)
   }
 
+  deleteUser(id: number): Observable<HttpResponse<any>> {
+    return this.http.delete<any>(`${environment.api}/users/${id}`, {observe: 'response'})
+  }
+
   authUser(dataLogin: Accounts): Observable<HttpResponse<any>>{
     return this.http.post<Accounts>(`${environment.api}/users/auth`,
      dataLogin, {observe: 'response'})
   }
+
   registerUser(data: Accounts): Observable<HttpResponse<any>>{
     return this.http.post<Accounts>(`${environment.api}/users`,
     data, {observe: 'response'})

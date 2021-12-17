@@ -28,4 +28,30 @@ export class AlertService {
     Swal.fire(title, message, icon)
   }
 
+  public showAlertYesNo(
+    title: string,
+    message: string,
+    icon = 'warning',
+    func: any
+  ){
+    Swal.fire({
+        title: title,
+        text: message,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sim!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Deletado!',
+            'Usuário deletado com sucesso.',
+            'success'
+          )
+        }
+      })
+  }
+
+
 }

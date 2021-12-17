@@ -9,7 +9,9 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpInterceptor } from '@angular/common/http';
-import { CadastroComponent } from './cadastro/cadastro.component'
+import { CadastroComponent } from './cadastro/cadastro.component';
+import { EditarComponent } from './editar/editar.component'
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,15 @@ import { CadastroComponent } from './cadastro/cadastro.component'
       LoginComponent,
       AnimesComponent,
       HomeComponent,
-      CadastroComponent
+      CadastroComponent,
+      EditarComponent
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-
-    HttpClientModule
+    HttpClientModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [
     HttpInterceptorProviders

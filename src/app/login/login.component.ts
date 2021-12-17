@@ -20,9 +20,9 @@ export class LoginComponent implements OnInit {
     private router: Router
     )
     {
-      // if(this.authService.isLoggedIn()){
-      //   this.router.navigate(['home'])
-      // }
+      if(this.authService.isUserLogged()){
+        this.router.navigate(['home'])
+      }
       // if(this.authService.isLoggedIn()){
       //   this.router.navigate(['catalogo'])
       // }
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
   }
   logar():void {
     //this.authService.autenticar(this.dataLogin);
-    this.authService.login(this.dataLogin)
+    this.authService.login(this.dataLogin);
   }
 
 }

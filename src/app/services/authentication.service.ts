@@ -48,7 +48,7 @@ export class AuthenticationService implements OnInit {
       httpError => {
         this.alert.error(httpError.error.msg)
       }
-    );
+    )
   }
 
   private setSession(data: any){
