@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import { Accounts } from '../models/account';
+import { Accounts } from '../../models/account';
 
 @Component({
   selector: 'app-home',

@@ -1,7 +1,7 @@
-import { Content } from './../models/content';
+import { Content } from '../../models/content';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiService } from '../services/api.service';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-catalog',
@@ -11,7 +11,7 @@ import { ApiService } from '../services/api.service';
 export class CatalogComponent implements OnInit {
 
   contents!: Observable<Content[]>;
-  
+
   baseUrl = "http://localhost:3500/";
 
   constructor(

@@ -1,6 +1,6 @@
-import { AlertService } from './../../services/alert.service';
-import { Accounts } from './../../models/account';
-import { ApiService } from './../../services/api.service';
+import { AlertService } from '../../services/alert.service';
+import { Accounts } from '../../models/account';
+import { ApiService } from '../../services/api.service';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, switchMap, tap } from 'rxjs/operators';
@@ -24,7 +24,7 @@ export class EditUsersComponent implements OnInit,AfterViewInit {
     private api: ApiService,
     private router: Router
   ) { }
- 
+
   ngAfterViewInit(){
     //this.teste.updateTextFields();
   }
