@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+  /*
+  background-image: url("./assets/images/dark-wallpaper.jpg");
+  */
+  background-image: linear-gradient(to right, #0f0f0f 0%, black 100%);
+}
+.border-gradient {
+  padding: 25px;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+}
+.border-gradient-purple {
+  border-image-source: linear-gradient(to right, #0f0f0f 100%, #0f0f0f 0%);
+  /*
+  linear-gradient(to right, #0f0f0f 100%, black 100%);
+  */
+}
+.inpt{
+  color: white;
+  font-size: 1.4rem;
+}

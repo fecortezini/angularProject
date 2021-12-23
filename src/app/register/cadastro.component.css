@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap');
+
+*{
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+.login{
+  margin: 15% auto;
+  width: 27rem;
+  text-align: center;
+}
+.card-action{
+  margin-top: 20px;
+}
+.card{
+  background-color: transparent;
+  box-shadow: none;
+  color: rgb(209, 204, 204);
+}
+.btn-logar{
+  font-size: 1.2rem;
+  color: rgb(253, 253, 253);
+}
+.input-field{
+  margin: 1rem;
+}
+.logar{
+  margin-top: 15px;
+  padding: 10px;
+  height: 100%;
+}
+.border-gradient {
+  padding: 25px;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+}
+.border-gradient-purple {
+  border-image-source: linear-gradient(to right, #0f0f0f 100%, #0f0f0f 0%);
+  /*
+  linear-gradient(to right, #0f0f0f 100%, black 100%);
+  */
+}
+.msg{
+  font-size: 1.5rem;
+  color: white;
+  margin-top: 10px;
+}

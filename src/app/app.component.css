@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap');
 *{
   font-family: 'M PLUS 1', sans-serif;
 }
@@ -9,14 +10,15 @@ footer {
   bottom:0;
   width:100%;
 }
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
+/* html, body {
+  background-image: url("../assets/images/fundogrande.jpg");
+  height: 100%;
+} */
 main {
   flex: 1 0 auto;
 }
 .menu{
-  background-color: #26a69a;
+  background-color: rgba(0, 0, 0, 0.288);
+  box-shadow: none;
 }
+

@@ -1,5 +1,5 @@
-import { AuthenticationService } from './../services/authentication.service';
-import { Accounts } from './../models/account';
+import { AuthenticationService } from '../services/authentication.service';
+import { Accounts } from '../models/account';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

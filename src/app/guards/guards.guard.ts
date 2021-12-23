@@ -1,8 +1,6 @@
 import { AuthenticationService } from './../services/authentication.service';
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
-import * as jwt_decode from "jwt-decode"
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'

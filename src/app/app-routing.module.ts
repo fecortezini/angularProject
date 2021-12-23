@@ -1,6 +1,5 @@
-import { EditarComponent } from './editar/editar.component';
-import { CadastroComponent } from './cadastro/cadastro.component';
-import { AnimesComponent } from './animes/animes.component';
+import { CatalogComponent } from './catalog/catalog.component';
+import { CadastroComponent } from './register/cadastro.component';
 //import { WellcomeComponent } from './wellcome/wellcome.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -17,11 +16,15 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent,
   canActivate: [AuthsGuard] },
 
-  { path: 'usuarios', component: AnimesComponent,
-  canActivate: [AuthsGuard]},
+  { path: 'catalogo', component: CatalogComponent,
+  canActivate: [AuthsGuard] },
 
-  { path: 'editar', component: EditarComponent,
-  canActivate: [AuthsGuard]},
+  // { path: 'usuarios', component: UsuariosComponent,
+  // canActivate: [AuthsGuard]},
+
+  // { path: 'editar', component: EditarComponent,
+  // canActivate: [AuthsGuard]},
+  // { path: '**', redirectTo: '/home' },
 
   { path: '', component: LoginComponent }
 

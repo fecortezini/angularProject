@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  currentUser = localStorage.getItem('currentUser')
+  //currentUser = localStorage.getItem('currentUser')
 
   dataLogin!: Accounts;
 
@@ -30,6 +30,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(){
     this.dataLogin = new Accounts();
+  }
+  redirect(){
+    this.router.navigate(['cadastro'])
   }
   logar():void {
     //this.authService.autenticar(this.dataLogin);
