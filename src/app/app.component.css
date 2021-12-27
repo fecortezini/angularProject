@@ -1,24 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap');
-*{
-  font-family: 'M PLUS 1', sans-serif;
-}
 .mn{
   font-size: 1.5em;
 }
-footer {
+/* footer {
   position: fixed;
   bottom:0;
   width:100%;
-}
-/* html, body {
-  background-image: url("../assets/images/fundogrande.jpg");
-  height: 100%;
 } */
-main {
+/* main {
   flex: 1 0 auto;
-}
+} */
 .menu{
   background-color: rgba(0, 0, 0, 0.288);
   box-shadow: none;
 }
-
+.container{
+}

@@ -2,24 +2,33 @@
   margin-top: 10px;
 }
 .list{
-  margin-top: 6rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 .titulo {
   text-align: center;
   margin-left: 10px;
-  color: #26a69a;
+  color: rgb(153, 149, 149);
 }
 .card-content{
   color:#6a1b9a;
   text-align: center;
-  font-weight: bold;
+  font-weight: 2;
 }
 .card{
+  background-color: transparent;
   float: left;
   display: inline;
   margin: 15px;
 }
 .dado {
+  font-weight: 300px;
   color: red;
   font-style: italic;
+}
+.btn-deletar:hover{
+  background-color: rgb(133, 2, 2) !important;
+}
+.btn-editar:hover{
+  background-color: rgb(4, 4, 180) !important;
 }

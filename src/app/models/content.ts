@@ -4,5 +4,13 @@ export class Content {
   eps!: string;
   genre!: string;
   description!: string;
-  poster!: string;
+  aired!: string;
+  duration!: string;
+  type!: string;
+  status!: string;
+  rating!: string;
+  score!: string;
+  producer!: string;
+  studio!: string;
+  poster!: any;
 }

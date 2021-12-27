@@ -1,3 +1,4 @@
+import { ContentViewerComponent } from './content-viewer/content-viewer.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './register/cadastro.component';
@@ -10,11 +11,18 @@ import { UsersListComponent } from './users-list/users-list.component';
 
 const routes: Routes = [
 
+
+
   { path: 'users', component: UsersListComponent,
   canActivate: [AuthsGuard]},
 
   { path: 'users/editar/:id', component: EditUsersComponent,
   canActivate: [AuthsGuard]},
+
+  { path: 'catalogo', component: CatalogComponent ,
+  canActivate: [AuthsGuard]},
+
+  { path: 'catalogo/viewer/:title', component: ContentViewerComponent , canActivate: [AuthsGuard]},
 
   { path: 'login', component: LoginComponent },
 
@@ -23,8 +31,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent,
   canActivate: [AuthsGuard] },
 
-  { path: 'catalogo', component: CatalogComponent,
-  canActivate: [AuthsGuard] },
+
 
 ];
 

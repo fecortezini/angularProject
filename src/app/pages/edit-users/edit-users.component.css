@@ -3,4 +3,8 @@ body,
 .login-box {
   height: 90vh;
 }
-
+.card{
+  background-color: transparent;
+  color: rgb(153, 149, 149);
+  text-decoration: none;
+}

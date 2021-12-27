@@ -1,0 +1,84 @@
+<div class="content">
+  <div class="row">
+    <h4 class="titulo border-gradient border-gradient-purple">Viewer</h4>
+  </div>
+  <div class="row">
+    <div class="viewer col s12">
+      <div class="content-info">
+        <div class="poster col s12 m4 l4 xl2">
+          <div class="img">
+            <img [src]="content?.poster">
+          </div>
+          <span>Duração: </span>{{ content?.duration }}
+          <p>
+          <span>Idade: </span>{{ content?.rating }}
+          </p>
+        </div>
+
+
+
+        
+
+
+
+
+
+        <div class="info col s12 m8 l8 xl10">
+            <div class="title">
+              <div class="score">
+                <h3>{{ content?.title }}</h3>
+                  <i class="material-icons gold mar">star</i>
+                <div class="gold">{{ content?.score }}</div>
+              </div>
+            </div>
+          <div>
+            <p><span>Lançamento: </span>
+              {{ content?.aired }}
+            </p>
+            <p><span>Episódios: </span>
+              {{ content?.eps }}
+            </p>
+            <p><span >Tipo: </span>
+              {{ content?.type }}
+            </p>
+            <p><span>Estado: </span>{{ content?.status }}</p>
+            <p><span>Produtora(o): </span>
+              {{ content?.producer }}
+            </p>
+            <p><span>Estudio: </span>
+              {{ content?.studio }}
+            </p>
+          </div>
+          <br>
+          <span>Sinopse: </span>
+          <div class="more-infos">
+            <div class="description">
+              <p>{{ content?.description }}</p>
+            </div>
+            <br>
+            <p><span>Generos: </span>{{ content?.genre }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="view">
+      <div class="table">
+        <table class="col s12 m12 l10">
+          <thead>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ep of array">
+              <td>{{ ep }}</td>
+              <div class="right-align">
+                <a class="waves-effect waves-light btn"><i class="material-icons">play_arrow</i>Assistir</a>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>

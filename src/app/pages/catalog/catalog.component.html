@@ -1,33 +1,50 @@
-<div class="titulo">
-  <h4>Séries</h4>
-</div>
-<div class="container">
+<div class="content">
   <div class="row">
-    <div class="col s6 m12 l12">
-      <a href="http://localhost:4200/catalogo">
-        <div class="card" *ngFor="let content of contents | async">
+    <h4 class="titulo border-gradient border-gradient-purple">Séries</h4>
+  </div>
+  <div class="row busca">
+    <label class="col s12 m12 l8 nopadding">
+      <button class="btn-search"type="button" (click)="refresh()">
+        <i class="material-icons">search</i>
+      </button>
+      <input [formControl]="searchForm" (keypress)="keypress()" placeholder="Buscar por título"
+      class="col s12 nopadding inpt-busca border-gradient border-gradient-purple" type="text" name="input">
+    </label>
+    
+    <select class="col s6 m5 l2 browser-default select-genre mleft ">
+      <option value="" disabled selected>Gênero</option>
+      <option class="decorated" *ngFor="let genre of genres"> {{ genre }}</option>
+    </select>
+    <button type="button" class="col s4 m3 l1 btn-filtrar mleft">
+      Filtrar
+    </button>
+  </div>
 
-          <div class="card-image">
-            <img class="" [src]="content.poster" width="100" height="250">
+  <div class="row">
+    <div class="">
+      <div class="items">
+        <div class="col s12 m4 l4 xl2 anime"
+        *ngFor="let content of contents | async">
+          <div class="poster">
+            <a>
+              <img [routerLink]="['viewer', content.title]" class="responsive-img" [src]="content.poster">
+            </a>
           </div>
-          <div class="card-vertical-title">
-            <span class="lol" >
+          <div class="info">
+            <div class="info-title">
+              <a>
               {{ content.title }}
-            </span>
-            <br>
-            <span class="eps">
-              Episódios: {{ content.eps }}
-            </span>
+              </a>
+            </div>
+            <div class="info-eps">
+              Episódios: <b>{{ content.eps }}</b>
+            </div>
           </div>
-          <!-- <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">{{ content.title }}<i class="material-icons right">close</i></span>
-            <p>{{ content.description }}</p>
-          </div> -->
-
         </div>
-      </a>
+      </div>
     </div>
   </div>
 
 </div>
 
+<router-outlet></router-outlet>

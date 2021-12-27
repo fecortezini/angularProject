@@ -42,7 +42,7 @@ export class EditUsersComponent implements OnInit,AfterViewInit {
     ).subscribe(
       data => this.user = data
     )
-
+      console.log(this.user);
   }
   redirect(){
     this.router.navigate(['users'])

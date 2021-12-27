@@ -3,13 +3,25 @@
   background-image: url("/src/assets/images/fundogrande.jpg");
   height: 100%;
 } */
+/* *{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 .card{
-  max-width: 180px;
-  float: left;
-  margin:10px;
+  height: 240px;
+  width: 160px;
   background-color: transparent;
   box-shadow: none;
+
+  float: left;
 }
+.container{
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+} */
+/*
 .card-title{
   font-size: 1.1rem;
 }
@@ -18,28 +30,197 @@ a {
   text-decoration: none;
 }
 .titulo{
-  text-align: center;
-  /*
-  color: #26a69a;
-  */
-  color: rgb(153, 149, 149);
-}
-.lol {
-  color: rgb(153, 149, 149);
   font-size: 1rem;
   font-weight: bold;
+  text-align: center;
+  color: rgb(153, 149, 149);
 }
-.card-vertical-title{
-  padding: 5px;
-
+.card-vertical-title {
+  color: rgb(153, 149, 149);
 }
-.container{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+.teste{
+  padding: 1rem;
+}
+.catalogo{
+  margin-top: 2rem;
 }
 .eps{
   color: rgb(98, 97, 99);
   line-height: 1.2;
 }
+.zoom {
+  background-color: transparent;
+  transition: transform .2s;
+}
+.zoom:hover {
+  transform: scale(1.05);
+}
+input {
+  background-color: rgb(153, 149, 149)
+} */
+/* *{
+  margin-top: 10px;
+}
+.list{
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.titulo {
+  text-align: center;
+  margin-left: 10px;
+  color: rgb(153, 149, 149);
+
+}
+.card-content{
+  color:#6a1b9a;
+  text-align: center;
+  font-weight: 400;
+}
+
+.card-image{
+  padding: 10px;
+  height: 240px;
+  width: 100%;
+}
+.card{
+  background-color: transparent;
+  overflow: hidden;
+  width: 240px;
+  height: 400px;
+  float: left;
+  display: inline;
+  margin: 15px;
+}
+.dado {
+  color: red;
+}
+.zoom {
+  background-color: transparent;
+  transition: transform .2s;
+}
+.zoom:hover {
+  transform: scale(1.05);
+}*/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box!important;
+}
+.content{
+  margin-top: 3rem;
+  text-align: center;
+  height: 100%;
+  justify-content: space-between;
+  background-color:transparent;
+}
+.poster{
+  margin-left: auto;
+  margin-right: auto;
+}
+.anime{
+  padding: 5px;
+  text-align: center;
+  margin-top: 10px;
+  display: inline;
+  float: left;
+  width: 160px;
+  height: 330px;
+}
+.info-eps{
+  color: #6a1b9a;
+  font-weight: 500;
+}
+.info-title{
+  margin-top: 5px;
+  font-weight: 550;
+}
+.titulo{
+  color: rgb(153, 149, 149);
+  padding: 10px;
+  margin-bottom: 1rem;
+}
+a{
+  color: #f44336;
+}
+a:hover{
+  transition: 0.2s;
+  color: #b71c1c;
+  cursor: pointer;
+}
+img:hover {
+  transition: 0.5s;
+  background-color: #C37500;
+  opacity:0.55 !important;
+  filter:alpha(opacity=55) !important;
+  box-shadow: 0 0 0px #000000 !important;
+}
+.inpt-busca{
+  color: rgb(100, 100, 100) !important;
+  /* border-bottom: none!important; */
+  border: 1px solid rgb(34, 33, 33) !important;
+  padding-left: 10px !important;
+  border-radius: 0.25rem !important;
+}
+.inpt-busca:focus {
+  border-bottom: 1px solid rgb(34, 33, 33) !important;
+  box-shadow: none!important;
+}
+.mleft{
+  margin-left: 10px!important;
+}
+select>option{
+  border: 0 !important;
+  background-color: rgb(50, 50, 50) !important;
+}
+select:focus{
+  outline:none!important;
+}
+.select-genre{
+  color: rgb(100, 100, 100);
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid rgb(34, 33, 33);
+}
+button:hover{
+  cursor: pointer;
+}
+label{
+  position: relative;
+}
+input[type="text"]{
+  width: auto;
+  height: 40px;
+  padding-left: 10px !important;
+  padding-right: 15px;
+}
+.btn-search{
+  padding-right: 15px;
+  background-color: transparent;
+  color: white;
+  border: 0;
+  height: 40px;
+  position: absolute;
+  right: 0;
+}
+.btn-filtrar{
+  background-color: transparent;
+  color: rgb(130, 130, 130);
+  height: 40px;
+  border: 0;
+  border: 1px solid rgb(34, 33, 33);
+}
+.btn-filtrar:hover{
+  background-color: rgb(30, 30, 30);
+  color: white;
+}
+::placeholder {
+  color: rgb(80, 80, 80);
+  opacity: 100%;
+}
+.nopadding {
+  padding: 0 !important;
+}
+    /*
+input {border:0;outline:0;}
+input:focus {outline:none!important;} */

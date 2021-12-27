@@ -1,11 +1,9 @@
 import { Content } from './../models/content';
 import { environment } from '../../environments/environment';
 import { Accounts } from '../models/account';
-import { SignInData } from '../models/signinData';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, tap } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -45,5 +43,9 @@ export class ApiService {
   getCatalog(): Observable<Content[]>{
     return this.http.get<Content[]>(`${this.apiCat}`);
   }
+
+  // getContentOnCatalog(title: string): Observable<Content>{
+  //   return this.http.get<Content>(`${this.apiCat}/`);
+  // }
 
 }

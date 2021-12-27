@@ -1,9 +1,11 @@
-
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+  /* font-family: 'M PLUS 1', sans-serif; */
+  font-family: 'Poppins', sans-serif;
+}
 html, body {
   height: 100%;
-  /*
-  background-image: url("./assets/images/dark-wallpaper.jpg");
-  */
   background-image: linear-gradient(to right, #0f0f0f 0%, black 100%);
 }
 .border-gradient {
@@ -14,11 +16,14 @@ html, body {
 }
 .border-gradient-purple {
   border-image-source: linear-gradient(to right, #0f0f0f 100%, #0f0f0f 0%);
-  /*
-  linear-gradient(to right, #0f0f0f 100%, black 100%);
-  */
 }
 .inpt{
   color: white;
   font-size: 1.4rem;
+}
+.zoom {
+  transition: transform .2s;
+}
+.zoom:hover {
+  transform: scale(1.04);
 }
