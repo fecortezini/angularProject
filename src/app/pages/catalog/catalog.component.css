@@ -114,6 +114,10 @@ input {
   justify-content: space-between;
   background-color:transparent;
 }
+.tela{
+  max-height: 680px;
+  
+}
 .poster{
   margin-left: auto;
   margin-right: auto;

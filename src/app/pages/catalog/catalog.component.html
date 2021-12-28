@@ -3,27 +3,34 @@
     <h4 class="titulo border-gradient border-gradient-purple">Séries</h4>
   </div>
   <div class="row busca">
-    <label class="col s12 m12 l8 nopadding">
+    <label class="col s12 m12 l7 nopadding">
       <button class="btn-search"type="button" (click)="refresh()">
         <i class="material-icons">search</i>
       </button>
       <input [formControl]="searchForm" (keypress)="keypress()" placeholder="Buscar por título"
       class="col s12 nopadding inpt-busca border-gradient border-gradient-purple" type="text" name="input">
     </label>
-    
-    <select class="col s6 m5 l2 browser-default select-genre mleft ">
+
+    <select #btnFiltrar class="col s6 m5 l2 browser-default
+    select-genre mleft">
       <option value="" disabled selected>Gênero</option>
-      <option class="decorated" *ngFor="let genre of genres"> {{ genre }}</option>
+      <option class="decorated" *ngFor="let result of results">
+        {{ result }}</option>
     </select>
-    <button type="button" class="col s4 m3 l1 btn-filtrar mleft">
+    <button  type="button" class="col s2 m2 l1 btn-filtrar mleft"
+    (click)="filter(btnFiltrar)">
       Filtrar
     </button>
+    <button  type="button" class="col s2 m2 l1 btn-filtrar mleft"
+    (click)="refresh()">
+      Resetar lista
+    </button>
   </div>
-
-  <div class="row">
+    <!-- <p style="color: white">{{ results }}</p> -->
+  <div class="row tela border-gradient border-gradient-purple">
     <div class="">
       <div class="items">
-        <div class="col s12 m4 l4 xl2 anime"
+        <div class="col s6 m4 l3 xl2 anime"
         *ngFor="let content of contents | async">
           <div class="poster">
             <a>
@@ -47,4 +54,3 @@
 
 </div>
 
-<router-outlet></router-outlet>
