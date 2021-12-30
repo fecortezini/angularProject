@@ -27,3 +27,18 @@ html, body {
 .zoom:hover {
   transform: scale(1.04);
 }
+.btn-del:hover{
+  background-color: rgb(202, 20, 20) !important;
+}
+.btn-edit:hover{
+  background-color: rgb(5, 99, 10) !important;
+}
+.btn-blue:hover{
+  background-color: rgb(26, 48, 172) !important;
+}
+.verd{
+  color: green;
+}
+.ver{
+  color: red;
+}
