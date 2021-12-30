@@ -12,11 +12,9 @@ import * as jQuery from 'jquery';
   templateUrl: './edit-users.component.html',
   styleUrls: ['./edit-users.component.css']
 })
-export class EditUsersComponent implements OnInit,AfterViewInit {
+export class EditUsersComponent implements OnInit {
 
   user!: Accounts;
-
-  @ViewChild('dataForm') teste!: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,24 +23,17 @@ export class EditUsersComponent implements OnInit,AfterViewInit {
     private router: Router
   ) { }
 
-  ngAfterViewInit(){
-    //this.teste.updateTextFields();
-  }
-
   ngOnInit(): void {
 
     this.user = new Accounts();
 
     this.route.params
     .pipe(
-      tap(console.log),
       map(params => params['id']),
-      tap(console.log),
       switchMap(id => this.api.getUser(id))
     ).subscribe(
       data => this.user = data
     )
-      console.log(this.user);
   }
   redirect(){
     this.router.navigate(['users'])

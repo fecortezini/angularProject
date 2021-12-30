@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { PagesRoutingModule } from './pages-routing.module';
 import { EditContentComponent } from './edit-content/edit-content.component';
 import { ContentViewerComponent } from './content-viewer/content-viewer.component';
+import { AddContentComponent } from './add-content/add-content.component';
 
 
 @NgModule({
@@ -23,11 +24,8 @@ import { ContentViewerComponent } from './content-viewer/content-viewer.componen
     HomeComponent,
     CatalogComponent,
     EditContentComponent,
-    ContentViewerComponent
-  ],
-  exports: [
-    EditUsersComponent,
-    UsersListComponent
+    ContentViewerComponent,
+    AddContentComponent
   ],
   imports: [
     CommonModule,

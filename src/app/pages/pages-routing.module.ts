@@ -1,3 +1,5 @@
+import { AddContentComponent } from './add-content/add-content.component';
+import { EditContentComponent } from './edit-content/edit-content.component';
 import { ContentViewerComponent } from './content-viewer/content-viewer.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { HomeComponent } from './home/home.component';
@@ -22,7 +24,12 @@ const routes: Routes = [
   { path: 'catalogo', component: CatalogComponent ,
   canActivate: [AuthsGuard]},
 
+  { path: 'catalogo/new', component: AddContentComponent ,
+  canActivate: [AuthsGuard]},
+
   { path: 'catalogo/viewer/:title', component: ContentViewerComponent , canActivate: [AuthsGuard]},
+
+  { path: 'catalogo/viewer/:title/update', component: EditContentComponent , canActivate: [AuthsGuard]},
 
   { path: 'login', component: LoginComponent },
 

@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { AlertService } from './../../services/alert.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { tap, map } from 'rxjs/operators';
 import { Content } from 'src/app/models/content';
 import { ApiService } from 'src/app/services/api.service';
+import { Location } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-content-viewer',
   templateUrl: './content-viewer.component.html',
   styleUrls: ['./content-viewer.component.css']
 })
-export class ContentViewerComponent implements OnInit {
+export class ContentViewerComponent implements OnInit, OnDestroy {
 
   title!: string;
 
@@ -19,17 +22,21 @@ export class ContentViewerComponent implements OnInit {
 
   array!: any;
 
+  sub!: Subscription;
+
   constructor(
     private route: ActivatedRoute,
-    private api: ApiService
+    private api: ApiService,
+    private alert: AlertService,
+    private _location: Location
   ) { }
 
+
   ngOnInit(): void {
+
     this.route.params.pipe(
       map(params => params['title'])
-    ).subscribe(
-      data => this.title = data
-    )
+    ).subscribe(data => this.title = data)
 
     this.api.getCatalog().pipe(
       map(data => data.filter((data:any) => data.title == this.title))
@@ -39,9 +46,25 @@ export class ContentViewerComponent implements OnInit {
       this.array = Array.from({length: this.eps},
         (_, index) => index +1)
         .map(eps => "Episódio " + eps);
-      console.log(this.array);
+      //console.log(this.array);
     });
-    //console.log(this.eps);
+  }
+
+  delete(id: string){
+    this.api.deleteContent(id).subscribe(
+      result => {
+        this.alert.success(result.body.msg);
+        //this.router.navigate['catalogo'];
+        this._location.back();
+      },
+      httpError => {
+        this.alert.error(httpError.error.msg)
+      }
+    )
+  }
+
+
+  ngOnDestroy(): void {
   }
 
 }

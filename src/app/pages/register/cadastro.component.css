@@ -5,7 +5,7 @@
   border: 0;
   padding: 0;
   box-sizing: border-box;
-  
+
 }
 .login{
   margin: 15% auto;
@@ -31,6 +31,19 @@
   margin-top: 15px;
   padding: 10px;
   height: 100%;
+  font-size: 0.8rem;
+}
+.card-action{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  padding: 15px;
 }
 .border-gradient {
   padding: 25px;

@@ -5,6 +5,7 @@ import { ApiService } from '../../services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { debounceTime, filter, map, switchMap, tap } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
+import { data } from 'jquery';
 
 @Component({
   selector: 'app-catalog',
@@ -16,6 +17,8 @@ export class CatalogComponent implements OnInit {
   contents!: Observable<Content[]>;
 
   searchForm = new FormControl();
+
+  itemsNumber!: number;
 
   inputLower!: string;
 
@@ -37,22 +40,31 @@ export class CatalogComponent implements OnInit {
   }
 
   loadGenres(){
-    let teste:any;
+    let teste: any;
     this.api.getCatalog().pipe(
-    map((data:any) => data.filter((data:any) => {
-      teste = teste +", "+ data.genre
+    map((data:any) => data.filter((dt:any) => {
+      this.itemsNumber = data.length-1;
+      //console.log(this.itemsNumber);
+      teste = teste +", "+ dt.genre
       teste = teste.split(", ");
       teste = teste.toString();
       let tnc = teste.split(",");
       this.array2.push(tnc);
     })),
     map(()=> {
-      let kk = this.array2[11];
+      //console.log(this.array2.length);
+      let kk = this.array2[this.itemsNumber];
       let k = Array.from(kk);
-      k.shift();
-      this.results = k.filter(function(el, i) {
+      var filtered = k.filter(function (el) {
+        return el != null;
+      });
+      //console.log(filtered);
+      this.results = filtered.filter(function(el, i) {
         return k.indexOf(el) === i;
-        });
+      });
+      //console.log(this.results);
+      this.results.shift()
+     // console.log(this.results);
     })
     ).subscribe()
   }
@@ -75,11 +87,12 @@ export class CatalogComponent implements OnInit {
     this.contents = this.api.getCatalog()
     .pipe(
       map((data:any) => data.filter((data:any) => data.genre.includes(teste.value))),
-      tap(console.log)
+      //tap(console.log)
     );
   }
 
   refresh(){
+    this.loadGenres();
     this.contents = this.api.getCatalog();
   }
 

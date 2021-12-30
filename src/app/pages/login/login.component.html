@@ -34,16 +34,16 @@
 
     </div>
   </div>
-</div> -->
+</div> s10 pull-s1 m12 pull-m3 l4 pull-l4 -->
 
-<div class="valign-wrapper row login-box">
-  <div class="col card s10 pull-s1 m6 pull-m3 l4 pull-l4">
+<!-- <div class="valign-wrapper row login-box">
+  <div class="col card s10 pull-s1 m12 pull-m3 l4 pull-l4">
     <form class="formlogin border-gradient-purple border-gradient" #signInForm="ngForm">
       <div class="card-content">
         <span class="card-title center-align">Login</span>
         <div class="row">
 
-          <div class="input-field col s12 ">
+          <div class="input-field col s12">
             <label for="user">Username</label>
             <input [(ngModel)]="dataLogin.user" ngModel required type="text" class="validate inpt" name="user" id="user" />
           </div>
@@ -69,5 +69,53 @@
         </div>
       </div>
 
+    </form>
+  </div> -->
+
+
+  <div class="row valign-wrapper teste ptop15 pbot">
+
+    <form #dataForm="ngForm" class="form col s12 m8 l6 xl4 center-align  border-gradient-purple border-gradient ">
+      <h5 class="titulo">Login</h5>
+      <div class="card-action"></div>
+
+    <div class="campos  lol">
+
+      <div class="input-field col s12 m12 l12 xl12 input">
+        <label for="user">Usuário</label>
+        <input [(ngModel)]="dataLogin.user" ngModel type="text" class="validate" name="user" id="user"/>
+      </div>
+
+      <div class="input-field col s12 m12 l12 xl12 input">
+        <label for="pass">Senha</label>
+        <input [(ngModel)]="dataLogin.pass" ngModel type="text" class="validate inpt" name="eps" id="eps"/>
+      </div>
+      <!-- col s8 m8 l8 xl12  -->
+      <div class="divider col s12 m12 l12 xl12 lol"></div>
+
+      <div class="row">
+        <div class="meio input-field col s12 ptop20">
+          <button type="button" class="btn green waves-effect waves-light btn-edit"
+          (click)="logar()">
+            LOGAR
+          </button>
+        </div>
+      </div>
+
+      <div class="divider col s12 m12 l12 xl12 lol"></div>
+
+      <div class="ptop30">
+
+        <p class="msg">Não possui uma conta?</p>
+        <p class="msg">Registre-se </p>
+      </div>
+
+      <div class="row meio input-field col s12 ptop10">
+        <div class="center-align register">
+          <button type="button" class="btn blue waves-effect btn-blue waves-light btn-registro" (click)="redirect()">Registre-se</button>
+        </div>
+      </div>
+
+    </div>
     </form>
   </div>

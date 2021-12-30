@@ -1,19 +1,15 @@
-import { HttpClient } from '@angular/common/http';
 import { AlertService } from './../../services/alert.service';
-import { Observable } from 'rxjs';
 import { ApiService } from './../../services/api.service';
 import { Content } from './../../models/content';
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Route } from '@angular/compiler/src/core';
-import { map, tap } from 'rxjs/operators';
+import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-edit-content',
-  templateUrl: './edit-content.component.html',
-  styleUrls: ['./edit-content.component.css']
+  selector: 'app-add-content',
+  templateUrl: './add-content.component.html',
+  styleUrls: ['./add-content.component.css']
 })
-export class EditContentComponent implements OnInit {
+export class AddContentComponent implements OnInit {
 
   file!: File;
 
@@ -24,46 +20,28 @@ export class EditContentComponent implements OnInit {
   title!: string;
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
+    private _location: Location,
     private api: ApiService,
-    private alert: AlertService,
-    private http: HttpClient
+    private alert: AlertService
   ) { }
 
   ngOnInit(): void {
-
-    this.content = new Content();
-    
-    this.route.params.pipe(
-      map(params => params['title'])
-    ).subscribe(
-      data => this.title = data
-    )
-    this.api.getCatalog().pipe(
-      map(data => data.filter((data:any) => data.title == this.title))
-    ).subscribe(data => {
-      //console.log(data[0]);
-       this.content = data[0]
-       this.oldFile = data[0].poster;
-    })
+    this.content = new Content()
   }
 
   redirect(){
-    this.router.navigate(['catalogo/viewer', this.content.title])
+    this._location.back();
   }
 
   onSelectedFiles(event: any){
     this.file = <File>event.target.files[0];
   }
 
-  private readonly apiCat = "http://localhost:3500/catalog";
-
-  updateContent(){
+  addContent(){
     try {
       const fd = new FormData();
 
-      fd.append('id', this.content.id)
+      //fd.append('id', this.content.id)
       fd.append('title', this.content.title)
       fd.append('eps', this.content.eps)
       fd.append('genre', this.content.genre)
@@ -79,11 +57,10 @@ export class EditContentComponent implements OnInit {
 
       fd.append('poster', this.file, this.file.name)
 
-      this.http.put(`${this.apiCat}/update/${this.content.id}`,
-      fd, {observe: 'response'}).subscribe(
+      this.api.addContent(fd).subscribe(
         result => {
-        //this.alert.success(result);
-        this.router.navigate(['catalogo'])
+          this.alert.success(result.body.msg);;
+          this._location.back();
         },
         httpError => {
           this.alert.error(httpError.error.msg);

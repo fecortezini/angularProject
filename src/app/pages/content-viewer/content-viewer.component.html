@@ -13,15 +13,22 @@
           <p>
           <span>Idade: </span>{{ content?.rating }}
           </p>
+
+          <div class="crud">
+            <button [routerLink]="['update']" class="btn-crud btn-edit btn-small green waves-effect waves-light">Editar</button>
+            <button (confirm)="delete(content.id)" class="btn-crud btn-del btn-small red waves-effect waves-light" [swal]="deleteSwal" >Deletar</button>
+          </div>
+
+          <swal
+            #deleteSwal
+            title="Deletar {{ content?.title }} ?"
+            text="Essa ação nao pode ser desfeita!"
+            icon="question"
+            [showCancelButton]="true"
+            cancelButtonColor="#d33">
+          </swal>
+
         </div>
-
-
-
-        
-
-
-
-
 
         <div class="info col s12 m8 l8 xl10">
             <div class="title">

@@ -3,7 +3,7 @@
     <h4 class="titulo border-gradient border-gradient-purple">Séries</h4>
   </div>
   <div class="row busca">
-    <label class="col s12 m12 l7 nopadding">
+    <label class="col s12 m12 l5 nopadding">
       <button class="btn-search"type="button" (click)="refresh()">
         <i class="material-icons">search</i>
       </button>
@@ -21,13 +21,16 @@
     (click)="filter(btnFiltrar)">
       Filtrar
     </button>
-    <button  type="button" class="col s2 m2 l1 btn-filtrar mleft"
+    <button  type="button" class="col s3 m2 l2 xl1 btn-filtrar mleft"
     (click)="refresh()">
       Resetar lista
     </button>
+    <button [routerLink]="['new']" type="button" class="col s6 m3 l3 xl2 btn green waves-effect waves-light mleft">
+      Adicionar seriado
+    </button>
   </div>
     <!-- <p style="color: white">{{ results }}</p> -->
-  <div class="row tela border-gradient border-gradient-purple">
+  <div class="row tela">
     <div class="">
       <div class="items">
         <div class="col s6 m4 l3 xl2 anime"

@@ -1,14 +1,14 @@
-
+<!--
 <div class="list border-gradient border-gradient-purple">
   <div class="titulo border-gradient border-gradient-purple">
     <h4>Lista de usuários do sistema</h4>
   </div>
   <div>
-    <div class="row">
-      <div class="col s12 m12">
-        <div class="card border-gradient-purple border-gradient"
+    <div class="">
+      <div class="teste col s12 m12 l12 xl12">
+        <div class="card border-gradient-purple border-gradient col s12 m6 l3 xl3"
         *ngFor="let user of users | async">
-          <div class="card-stacked">
+          <div class="">
             <div class="card-content">
               <p><b>Username:</b> <span class="dado"> <b>
                 {{ user.user }}</b> </span></p>
@@ -16,9 +16,9 @@
                 {{ user.pass }}</b> </span></p>
             </div>
             <div class="card-action">
-              <button class="btn btn-editar btn-small indigo waves-effect waves-light"
+              <button class="btn btn-edit indigo waves-effect waves-light"
               (click)="editar(user.id)">Editar</button> {{ "" }}
-              <button  class="btn btn-deletar btn-small red waves-effect waves-light" [swal]="deleteSwal" (confirm)="deletar(user)">
+              <button  class="btn btn-del red waves-effect waves-light" [swal]="deleteSwal" (confirm)="deletar(user)">
                 Deletar
               </button>
 
@@ -40,4 +40,98 @@
   </div>
 </div>
 
+ -->
+
+ <div class="content">
+  <div class="row titulo">
+    <h4 class="border-gradient border-gradient-purple">Lista de usários do sistema</h4>
+  </div>
+  <!-- <div class="row busca">
+    <label class="col s12 m12 l5 nopadding">
+      <button class="btn-search"type="button" (click)="refresh()">
+        <i class="material-icons">search</i>
+      </button>
+      <input [formControl]="searchForm" (keypress)="keypress()" placeholder="Buscar por título"
+      class="col s12 nopadding inpt-busca border-gradient border-gradient-purple" type="text" name="input">
+    </label>
+
+    <select #btnFiltrar class="col s6 m5 l2 browser-default
+    select-genre mleft">
+      <option value="" disabled selected>Gênero</option>
+      <option class="decorated" *ngFor="let result of results">
+        {{ result }}</option>
+    </select>
+    <button  type="button" class="col s2 m2 l1 btn-filtrar mleft"
+    (click)="filter(btnFiltrar)">
+      Filtrar
+    </button>
+    <button  type="button" class="col s2 m2 l1 btn-filtrar mleft"
+    (click)="refresh()">
+      Resetar lista
+    </button>
+    <button [routerLink]="['new']" type="button" class="col s2 m2 l2 btn green waves-effect waves-light mleft">
+      Adicionar seriado
+    </button>
+  </div> -->
+    <!-- <p style="color: white">{{ results }}</p> -->
+  <div class="row tela">
+
+      <div class="card ">
+        <div class="col s12 m6 l4 xl3 anime border-gradient border-gradient-purple"
+          *ngFor="let user of users | async">
+          <div class="data">
+            <div class="user">
+              <p><b>Username: </b>
+                <span class="dado"> <b>{{ user.user }}</b></span></p>
+            </div>
+            <div class="pwd">
+              <p><b>Password: </b>
+               <span class="dado"> <b>{{ user.pass }}</b></span></p>
+            </div>
+            <div class="crud">
+              <button class="btn btn-edit"
+                (click)="editar(user.id)">Editar
+              </button> {{ "" }}
+              <button  class="btn btn-del red" [swal]="deleteSwal"
+              (confirm)="deletar(user) ">
+                Deletar
+              </button>
+
+              <swal
+                #deleteSwal
+                title="Deletar {{ user.user }}?"
+                text="Essa ação nao pode ser desfeita"
+                icon="question"
+                [showCancelButton]="true"
+                [focusCancel]="true"
+                cancelButtonColor="#d33">
+              </swal>
+
+            </div>
+          </div>
+        </div>
+          <!-- <div class="card-action">
+              <button class="btn btn-edit indigo waves-effect waves-light"
+                (click)="editar(user.id)">Editar
+              </button> {{ "" }}
+              <button  class="btn btn-del red waves-effect waves-light" [swal]="deleteSwal" (confirm)="deletar(user)">
+                Deletar
+              </button>
+
+              <swal
+                #deleteSwal
+                title="Deletar {{ user.user }}?"
+                text="Essa ação nao pode ser desfeita"
+                icon="question"
+                [showCancelButton]="true"
+                [focusCancel]="true"
+                cancelButtonColor="#d33">
+              </swal>
+            </div> -->
+
+
+
+      </div>
+    </div>
+</div>
 

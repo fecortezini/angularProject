@@ -44,6 +44,20 @@ export class ApiService {
     return this.http.get<Content[]>(`${this.apiCat}`);
   }
 
+  addContent(data: FormData): Observable<HttpResponse<any>>{
+    return this.http.post<FormData>(`${this.apiCat}/addContent`,
+    data, {observe: 'response'})
+  }
+
+  updateContent(formData: any): Observable<HttpResponse<any>>{
+    return this.http.put<FormData>(`${this.apiCat}/update/${formData.id}`,
+    formData, {observe: 'response'})
+  }
+
+  deleteContent(id: string): Observable<HttpResponse<any>>{
+    return this.http.delete(`${this.apiCat}/delete/${id}`, {observe:'response'});
+  }
+
   // getContentOnCatalog(title: string): Observable<Content>{
   //   return this.http.get<Content>(`${this.apiCat}/`);
   // }
