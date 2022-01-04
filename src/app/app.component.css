@@ -1,17 +1,11 @@
 .mn{
   font-size: 1.5em;
 }
-/* footer {
-  position: fixed;
-  bottom:0;
-  width:100%;
-} */
-/* main {
-  flex: 1 0 auto;
-} */
 .menu{
   background-color: rgba(0, 0, 0, 0.288);
   box-shadow: none;
 }
-.container{
-}
+/* .sidenav{
+  color: rgb(100,100,100)!important;
+  background-color: rgb(100,100,100)!important;
+} */

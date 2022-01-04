@@ -1,47 +1,3 @@
-<!--
-<div class="list border-gradient border-gradient-purple">
-  <div class="titulo border-gradient border-gradient-purple">
-    <h4>Lista de usuários do sistema</h4>
-  </div>
-  <div>
-    <div class="">
-      <div class="teste col s12 m12 l12 xl12">
-        <div class="card border-gradient-purple border-gradient col s12 m6 l3 xl3"
-        *ngFor="let user of users | async">
-          <div class="">
-            <div class="card-content">
-              <p><b>Username:</b> <span class="dado"> <b>
-                {{ user.user }}</b> </span></p>
-              <p><b>Password:</b> <span class="dado"> <b>
-                {{ user.pass }}</b> </span></p>
-            </div>
-            <div class="card-action">
-              <button class="btn btn-edit indigo waves-effect waves-light"
-              (click)="editar(user.id)">Editar</button> {{ "" }}
-              <button  class="btn btn-del red waves-effect waves-light" [swal]="deleteSwal" (confirm)="deletar(user)">
-                Deletar
-              </button>
-
-              <swal
-                #deleteSwal
-                title="Deletar {{ user.user }}?"
-                text="Essa ação nao pode ser desfeita"
-                icon="question"
-                [showCancelButton]="true"
-                [focusCancel]="true"
-                cancelButtonColor="#d33">
-              </swal>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
- -->
-
  <div class="content">
   <div class="row titulo">
     <h4 class="border-gradient border-gradient-purple">Lista de usários do sistema</h4>
@@ -93,7 +49,7 @@
                 (click)="editar(user.id)">Editar
               </button> {{ "" }}
               <button  class="btn btn-del red" [swal]="deleteSwal"
-              (confirm)="deletar(user) ">
+              (confirm)="deletar(user)">
                 Deletar
               </button>
 
@@ -128,8 +84,6 @@
                 cancelButtonColor="#d33">
               </swal>
             </div> -->
-
-
 
       </div>
     </div>

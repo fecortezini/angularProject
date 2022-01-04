@@ -2,10 +2,11 @@
 
   <div class="row valign-wrapper teste ptop15">
 
-    <form #dataForm="ngForm" class="form col s12 m12 l8 xl6 center-align ptop  border-gradient-purple border-gradient ">
-      <h3 class="titulo">Editar série</h3>
+    <form #dataForm="ngForm" class="form col s12 m12 l8 xl6 center-align  border-gradient-purple border-gradient ">
+      <h3 class="titulo">Adicionar seriado</h3>
+      <div class="card-action"></div>
 
-    <div class="campos ptop40">
+    <div class="campos">
 
       <div class="input-field col s12 m8 l8 xl8 input">
         <label [ngClass]="{'active': content.title}" for="title">Titulo</label>
@@ -69,11 +70,11 @@
       </div>
 
       <div class="">
-        <div class="input-field col s12 m6 l6 xl6">
-          <label [ngClass]="{'active': content.poster}" for="poster">Poster</label>
-          <input accept=".png, .jpg, .jpeg" (change)="onSelectedFiles($event)" type="file" class="validate inpt-file ptop10" name="poster" id="poster"/>
-          <div class="msg ">
-            <p class="ver">Imagem atual: {{ oldFile?.slice(30) }}</p>
+        <div class="input-field col s12 m6 l6 xl12">
+          <label class="active" for="poster">Poster</label>
+          <input accept=".png, .jpg, .jpeg" (change)="onSelectedFiles($event)" type="file" class="validate inpt-file ptop10  col s12 m6 l6 xl12" name="poster" id="poster"/>
+          <div class="msg">
+            <p class="ver" *ngIf="oldFile">Imagem atual: {{ oldFile?.slice(30) }}</p>
             <p class="verd" *ngIf="file">A ser inserida: {{ file?.name }} </p>
           </div>
         </div>
@@ -84,19 +85,18 @@
           <button type="button" class="btn blue waves-effect waves-light btn-blue" (click)="redirect()">Voltar</button>
           {{ " " }}
           <button type="button" class="btn green waves-effect waves-light btn-edit" [disabled]="!file"
-          [swal]="updateSwal" (confirm)="updateContent()">
+          [swal]="addSwal" (confirm)="addContent()">
             CONFIRMAR
           </button>
         </div>
       </div>
 
       <swal
-        #updateSwal
-        title="Atualizar {{ content.title }} ?"
+        #addSwal
+        title="Adicionar {{ content.title }} a lista?"
         text="Essa ação nao pode ser desfeita!"
         icon="question"
         [showCancelButton]="true"
-        [focusCancel]="true"
         cancelButtonColor="#d33">
       </swal>
 
@@ -107,3 +107,4 @@
     </form>
   </div>
 </div>
+<router-outlet></router-outlet>

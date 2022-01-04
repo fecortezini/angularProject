@@ -1,4 +1,4 @@
-import { AlertService } from './../../services/alert.service';
+import { AlertService } from '../../../services/alert.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { tap, map } from 'rxjs/operators';
@@ -6,6 +6,7 @@ import { Content } from 'src/app/models/content';
 import { ApiService } from 'src/app/services/api.service';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-content-viewer',
@@ -28,7 +29,8 @@ export class ContentViewerComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private api: ApiService,
     private alert: AlertService,
-    private _location: Location
+    private _location: Location,
+    public auth: AuthenticationService
   ) { }
 
 

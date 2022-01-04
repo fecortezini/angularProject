@@ -1,3 +1,4 @@
+import { AuthsGuard } from './../../guards/guards.guard';
 import { Content } from '../../models/content';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -6,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { debounceTime, filter, map, switchMap, tap } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
 import { data } from 'jquery';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-catalog',
@@ -28,7 +30,8 @@ export class CatalogComponent implements OnInit {
 
 
   constructor(
-    private api: ApiService
+    private api: ApiService,
+    public auth: AuthenticationService
   ) { }
 
   ngOnInit(): void {

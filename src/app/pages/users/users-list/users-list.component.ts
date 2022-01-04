@@ -1,9 +1,9 @@
-import { AlertService } from '../../services/alert.service';
+import { AlertService } from '../../../services/alert.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApiService } from '../../services/api.service';
+import { ApiService } from '../../../services/api.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Accounts } from '../../models/account';
+import { Accounts } from '../../../models/account';
 
 @Component({
   selector: 'app-users-list',
@@ -14,8 +14,6 @@ export class UsersListComponent implements OnInit {
 
   users!: Observable<Accounts[]>;
 
-  @ViewChild('dataForm') test: any;
-  
   constructor(
     private api: ApiService,
     private router: Router,

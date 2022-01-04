@@ -49,8 +49,8 @@ export class ApiService {
     data, {observe: 'response'})
   }
 
-  updateContent(formData: any): Observable<HttpResponse<any>>{
-    return this.http.put<FormData>(`${this.apiCat}/update/${formData.id}`,
+  updateContent(formData: FormData, id: number): Observable<HttpResponse<any>>{
+    return this.http.put<FormData>(`${this.apiCat}/update/${id}`,
     formData, {observe: 'response'})
   }
 

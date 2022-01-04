@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
-import { AlertService } from './../../services/alert.service';
+import { AlertService } from '../../../services/alert.service';
 import { Observable } from 'rxjs';
-import { ApiService } from './../../services/api.service';
-import { Content } from './../../models/content';
+import { ApiService } from '../../../services/api.service';
+import { Content } from '../../../models/content';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';
 import { map, tap } from 'rxjs/operators';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-edit-content',
@@ -28,13 +29,14 @@ export class EditContentComponent implements OnInit {
     private route: ActivatedRoute,
     private api: ApiService,
     private alert: AlertService,
-    private http: HttpClient
+    private http: HttpClient,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
 
     this.content = new Content();
-    
+
     this.route.params.pipe(
       map(params => params['title'])
     ).subscribe(
@@ -57,13 +59,11 @@ export class EditContentComponent implements OnInit {
     this.file = <File>event.target.files[0];
   }
 
-  private readonly apiCat = "http://localhost:3500/catalog";
-
   updateContent(){
     try {
       const fd = new FormData();
 
-      fd.append('id', this.content.id)
+      //fd.append('id', this.content.id)
       fd.append('title', this.content.title)
       fd.append('eps', this.content.eps)
       fd.append('genre', this.content.genre)
@@ -79,16 +79,16 @@ export class EditContentComponent implements OnInit {
 
       fd.append('poster', this.file, this.file.name)
 
-      this.http.put(`${this.apiCat}/update/${this.content.id}`,
-      fd, {observe: 'response'}).subscribe(
-        result => {
-        //this.alert.success(result);
-        this.router.navigate(['catalogo'])
+      this.api.updateContent(fd, parseInt(this.content.id)).subscribe(
+        res => {
+          this.alert.success(res.body.msg);
+          this.location.back();
         },
         httpError => {
-          this.alert.error(httpError.error.msg);
+          this.alert.error(httpError.error.msg)
         }
-    )
+      );
+
     } catch (error) {
       console.log(error);
     }

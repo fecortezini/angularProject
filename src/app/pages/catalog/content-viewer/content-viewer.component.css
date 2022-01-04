@@ -109,6 +109,10 @@ td{
 .btn:hover{
   background-color: #380f52;
 }
+.msg-login{
+  font-size: 0.8rem;
+  color: red;
+}
 /* width */
 ::-webkit-scrollbar {
   width: 0.5rem;

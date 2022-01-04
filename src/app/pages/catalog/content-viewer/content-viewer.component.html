@@ -14,9 +14,12 @@
           <span>Idade: </span>{{ content?.rating }}
           </p>
 
-          <div class="crud">
+          <div *ngIf="auth.isUserLogged()"  class="crud">
             <button [routerLink]="['update']" class="btn-crud btn-edit btn-small green waves-effect waves-light">Editar</button>
             <button (confirm)="delete(content.id)" class="btn-crud btn-del btn-small red waves-effect waves-light" [swal]="deleteSwal" >Deletar</button>
+          </div>
+          <div *ngIf="!auth.isUserLogged()" class="crud">
+            <p><span class="msg-login">Faça login para manipular</span></p>
           </div>
 
           <swal
@@ -89,3 +92,4 @@
 
   </div>
 </div>
+<router-outlet></router-outlet>

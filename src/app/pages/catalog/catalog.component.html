@@ -25,9 +25,16 @@
     (click)="refresh()">
       Resetar lista
     </button>
-    <button [routerLink]="['new']" type="button" class="col s6 m3 l3 xl2 btn green waves-effect waves-light mleft">
+    <button *ngIf="auth.isUserLogged()" [routerLink]="['new']" type="button" class="col s6 m3 l3 xl2 btn green waves-effect waves-light mleft">
       Adicionar seriado
     </button>
+
+
+  </div>
+  <div class="row" *ngIf="!auth.isUserLogged()">
+    <span style="color: red" *ngIf="!auth.isUserLogged()" class="mleft">
+      Faça login para usar todos os recursos
+    </span>
   </div>
     <!-- <p style="color: white">{{ results }}</p> -->
   <div class="row tela">
@@ -54,6 +61,6 @@
       </div>
     </div>
   </div>
-
 </div>
 
+<router-outlet></router-outlet>

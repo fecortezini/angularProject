@@ -1,6 +1,6 @@
-import { AlertService } from './../../services/alert.service';
-import { ApiService } from './../../services/api.service';
-import { Content } from './../../models/content';
+import { AlertService } from '../../../services/alert.service';
+import { ApiService } from '../../../services/api.service';
+import { Content } from '../../../models/content';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
