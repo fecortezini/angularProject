@@ -18,7 +18,9 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     UsersRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    SweetAlert2Module
+    SweetAlert2Module.forChild({
+      provideSwal: () => import('sweetalert2/dist/sweetalert2.js')
+    })
   ]
 })
 export class UsersModule { }

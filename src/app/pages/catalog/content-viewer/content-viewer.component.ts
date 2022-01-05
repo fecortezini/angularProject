@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { tap, map } from 'rxjs/operators';
 import { Content } from 'src/app/models/content';
 import { ApiService } from 'src/app/services/api.service';
-import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
@@ -29,7 +28,7 @@ export class ContentViewerComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private api: ApiService,
     private alert: AlertService,
-    private _location: Location,
+    private router: Router,
     public auth: AuthenticationService
   ) { }
 
@@ -56,8 +55,7 @@ export class ContentViewerComponent implements OnInit, OnDestroy {
     this.api.deleteContent(id).subscribe(
       result => {
         this.alert.success(result.body.msg);
-        //this.router.navigate['catalogo'];
-        this._location.back();
+        this.router.navigate(['catalogo']);
       },
       httpError => {
         this.alert.error(httpError.error.msg)

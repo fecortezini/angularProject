@@ -46,12 +46,10 @@ export class AlertService {
         if (result.isConfirmed) {
           Swal.fire(
             'Deletado!',
-            'Usuário deletado com sucesso.',
+            'Item deletado com sucesso.',
             'success'
           )
         }
       })
   }
-
-
 }

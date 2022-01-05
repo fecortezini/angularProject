@@ -44,6 +44,7 @@
               <p><b>Password: </b>
                <span class="dado"> <b>{{ user.pass }}</b></span></p>
             </div>
+            
             <div class="crud">
               <button class="btn btn-edit"
                 (click)="editar(user.id)">Editar
@@ -66,25 +67,6 @@
             </div>
           </div>
         </div>
-          <!-- <div class="card-action">
-              <button class="btn btn-edit indigo waves-effect waves-light"
-                (click)="editar(user.id)">Editar
-              </button> {{ "" }}
-              <button  class="btn btn-del red waves-effect waves-light" [swal]="deleteSwal" (confirm)="deletar(user)">
-                Deletar
-              </button>
-
-              <swal
-                #deleteSwal
-                title="Deletar {{ user.user }}?"
-                text="Essa ação nao pode ser desfeita"
-                icon="question"
-                [showCancelButton]="true"
-                [focusCancel]="true"
-                cancelButtonColor="#d33">
-              </swal>
-            </div> -->
-
       </div>
     </div>
 </div>

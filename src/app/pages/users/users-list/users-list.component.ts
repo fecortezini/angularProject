@@ -37,7 +37,7 @@ export class UsersListComponent implements OnInit {
     this.api.deleteUser(user.id)
     .subscribe(
       data => {
-        //console.log(data.status);
+        this.alert.success(data.body.msg)
         this.refreshList();
       },
       httpError => {

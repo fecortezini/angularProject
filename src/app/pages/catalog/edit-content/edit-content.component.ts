@@ -82,7 +82,7 @@ export class EditContentComponent implements OnInit {
       this.api.updateContent(fd, parseInt(this.content.id)).subscribe(
         res => {
           this.alert.success(res.body.msg);
-          this.location.back();
+          this.router.navigate(['viewer', this.content.title])
         },
         httpError => {
           this.alert.error(httpError.error.msg)
